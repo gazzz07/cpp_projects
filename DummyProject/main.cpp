@@ -1,14 +1,16 @@
 #include <iostream>
 
-void doNothing(int&)
+void doubledNumber()
 {
+    std::cout << "Enter a number:\n";
+    int userNum {};
+    std::cin >> userNum;
+
+    std::cout << userNum << " doubled is " << userNum * 2 << ".\n";
 }
 
 int main()
 {
-
-    int x;
-    doNothing(x);
-    std::cout << x;
+    doubledNumber();
     return 0;
 }
