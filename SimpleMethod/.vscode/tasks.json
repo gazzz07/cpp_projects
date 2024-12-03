@@ -7,6 +7,17 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
+                "-ggdb", //release
+                //"-O2", //debug
+                //"-DNDEBUG", //debug
+                "-pedantic-errors", //additional error logging
+                "-Wall",
+                "-Weffc++",
+                "-Wextra",
+                "-Wconversion",
+                "-Wsign-conversion", //additional error logging ends
+                "-Werror", //warnings as errors
+                "-std=c++17", //lang standard
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
