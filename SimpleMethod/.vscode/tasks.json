@@ -18,7 +18,8 @@
                 "-Wsign-conversion", //additional error logging ends
                 "-Werror", //warnings as errors
                 "-std=c++17", //lang standard
-                "${file}",
+                "-I/source/includes", //including headers from other dirs
+                "${fileDirname}/**.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
