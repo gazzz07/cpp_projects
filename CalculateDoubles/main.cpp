@@ -1,24 +1,47 @@
 #include <iostream>
 
-double userInput()
+double getDouble()
 {
-    std::cout << "Please enter a double number.\n";
-    double userDouble{};
-    std::cin >> userDouble;
-    return userDouble;
+    std::cout << "Enter a double value: ";
+    double x{};
+    std::cin >> x;
+    return x;
 }
 
-char userOperand()
+char getOperator()
 {
-    std::cout << "Please select an operand (+ or - or * or /)";
-    char selectedOperand{};
-    std::cin >> selectedOperand;
-    return selectedOperand;
+    std::cout << "Enter +, -, *, or /: ";
+    char operation{};
+    std::cin >> operation;
+    return operation;
+}
+
+void printResult(double x, char operation, double y)
+{
+    double result{};
+
+    if (operation == '+')
+        result = x + y;
+    else if (operation == '-')
+        result = x - y;
+    else if (operation == '*')
+        result = x * y;
+    else if (operation == '/')
+        result = x / y;
+    else        // if the user did not pass in a supported operation
+        return; // early return
+
+    std::cout << x << ' ' << operation << ' ' << y << " is " << result << '\n';
 }
 
 int main()
 {
-    double x{userInput()};
-    double y{userInput()};
+    double x { getDouble() };
+    double y { getDouble() };
 
+    char operation { getOperator() };
+
+    printResult(x, operation, y);
+
+    return 0;
 }
